@@ -1,11 +1,11 @@
 extern crate lv2_raw;
-use libc;
 use std::ffi::CStr;
 use std::str;
+use std::os::raw::{c_char,c_void};
 
 pub fn mapfeature(hostfeatures: *const (*const lv2_raw::LV2Feature),
                   requiredfeature: &str)
-                  -> Result<*mut libc::c_void, &str> {
+                  -> Result<*mut c_void, &str> {
     let mut x: isize = 0;
     unsafe {
         loop {
@@ -26,7 +26,7 @@ pub fn mapfeature(hostfeatures: *const (*const lv2_raw::LV2Feature),
     Err("missing feature")
 }
 
-pub fn cstring<'a>(ptr: *const libc::c_char) -> &'a str {
+pub fn cstring<'a>(ptr: *const c_char) -> &'a str {
     unsafe {
         assert!(!ptr.is_null());
         let buf = CStr::from_ptr(ptr).to_bytes();

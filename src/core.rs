@@ -37,13 +37,13 @@ macro_rules! plugin {
         }
 
         static mut DESC: lv2::LV2Descriptor = lv2::LV2Descriptor {
-            uri: 0 as *const libc::c_char, // ptr::null() isn't const fn (yet)
+            uri: 0 as *const std::os::raw::c_char,
             instantiate: instantiate::<$t>,
             connect_port: connect_port::<$t>,
-            activate: Some(activate),
+            activate: Some(activate::<$t>),
             run: run::<$t>,
-            deactivate: Some(deactivate),
-            cleanup: cleanup,
+            deactivate: Some(deactivate::<$t>),
+            cleanup: cleanup::<$t>,
             extension_data: extension_data,
         };
 
@@ -54,27 +54,28 @@ macro_rules! plugin {
                                                             -> lv2::LV2Handle {
 
             let mut t = Box::new(PluginExtras::new(T::initialize()));
-            let ptr = &mut *t as *mut _ as *mut libc::c_void;
-            ::std::mem::forget(t);
+            let ptr = &mut *t as *mut _ as *mut std::os::raw::c_void;
+            std::mem::forget(t);
             return ptr;
         }
 
         extern "C" fn connect_port<P: lv2::Plugin>(handle: lv2::LV2Handle,
                                                              port: u32,
-                                                             data: *mut libc::c_void) {
+                                                             data: *mut std::os::raw::c_void) {
             assert!((port as usize) < MAX_N_PORTS);
             let d = data as *mut f32;
             let plgptr = handle as *mut PluginExtras<P>;
             unsafe {
                 (*plgptr).port_bufs[port as usize] = d;
-                // TODO: This should be sample_count. How do we get that number? During initialization? Set to some random (high) number.
-                // https://www.alsa-project.org/main/index.php/FramesPeriods
-                // let bs: &mut [f32] = ::std::slice::from_raw_parts_mut(d, 65536 * ::std::mem::size_of::<f32>());
-                // (*plgptr).plugin.connect_port(port, bs)
             }
         }
 
-        extern "C" fn activate(_instance: lv2::LV2Handle) {}
+        extern "C" fn activate<P: lv2::Plugin>(instance: lv2::LV2Handle) {
+            unsafe {
+                (*(instance as *mut PluginExtras<P>)).plugin.activate();
+            }
+        }
+
         extern "C" fn run<P: lv2::Plugin>(instance: lv2::LV2Handle, n_samples: u32) {
             let plgptr = instance as *mut PluginExtras<P>;
             unsafe {
@@ -91,26 +92,28 @@ macro_rules! plugin {
             }
         }
 
-        extern "C" fn deactivate(_instance: lv2::LV2Handle) {}
-        extern "C" fn cleanup(_instance: lv2::LV2Handle) {
-/*
+        extern "C" fn deactivate<P: lv2::Plugin>(instance: lv2::LV2Handle) {
             unsafe {
-                // TODO: deallocate the stuff
-                // ptr::read(instance as *mut Amp); // no need for this?
-                //libc::free(instance as lv2::LV2Handle)
-            }*/
+                (*(instance as *mut PluginExtras<P>)).plugin.deactivate();
+            }
         }
-        extern "C" fn extension_data(_uri: *const u8) -> (*const libc::c_void) {
-            ptr::null()
+
+        extern "C" fn cleanup<P: lv2::Plugin>(instance: lv2::LV2Handle) {
+            let mut plugin: Box<PluginExtras<P>> = unsafe { std::mem::transmute(instance) };
+            plugin.plugin.cleanup();
+        }
+
+        extern "C" fn extension_data(_uri: *const u8) -> (*const std::os::raw::c_void) {
+            std::ptr::null()
         }
 
 
         #[no_mangle]
         pub extern "C" fn lv2_descriptor(index: i32) -> *const lv2::LV2Descriptor {
             if index != 0 {
-                return ptr::null();
+                return std::ptr::null();
             } else {
-                let ptr = ::std::ffi::CStr::from_bytes_with_nul($url).unwrap().as_ptr() as *const libc::c_char;
+                let ptr = std::ffi::CStr::from_bytes_with_nul($url).unwrap().as_ptr() as *const std::os::raw::c_char;
                 unsafe {
                     DESC.uri = ptr;
                     return &DESC as *const lv2::LV2Descriptor;

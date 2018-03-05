@@ -1,5 +1,8 @@
+
 use libc;
+
 use lv2_raw;
+use std::os::raw::{c_char,c_void};
 
 pub struct LV2UIController(pub lv2_raw::LV2UIControllerRaw);
 
@@ -17,14 +20,14 @@ pub type LV2UIWriteFunction = Option<extern "C" fn(controller: LV2UIController,
                                                       port_index: libc::c_uint,
                                                       buffer_size: libc::c_uint,
                                                       port_protocol: libc::c_uint,
-                                                      buffer: *const libc::c_void)>;
+                                                      buffer: *const c_void)>;
 
 #[repr(C)]
 pub struct LV2UIDescriptor {
-    pub uri: *const libc::c_char,
+    pub uri: *const c_char,
     pub instantiate: extern "C" fn(descriptor: *const LV2UIDescriptor,
-                                       plugin_uri: *const libc::c_char,
-                                       bundle_path: *const libc::c_char,
+                                       plugin_uri: *const c_char,
+                                       bundle_path: *const c_char,
                                        write_function: LV2UIWriteFunction,
                                        controller: LV2UIController,
                                        widget: *mut lv2_raw::LV2UIWidget,
@@ -36,10 +39,6 @@ pub struct LV2UIDescriptor {
                                       port_index: libc::c_uint,
                                       buffer_size: libc::c_uint,
                                       format: libc::c_uint,
-                                      buffer: *const libc::c_void),
-    pub extension_data: Option<extern "C" fn(*const libc::c_char) -> *const libc::c_void>,
+                                      buffer: *const c_void),
+    pub extension_data: Option<extern "C" fn(*const c_char) -> *const c_void>,
 }
-
-
-
-                                                    
