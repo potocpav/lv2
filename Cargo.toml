@@ -25,8 +25,7 @@ license = "ISC"
 
 [dependencies]
 lazy_static = "1.0"
-libc = "0.2"
-lv2_raw = { version = "0.2.0", path = "../lv2_raw" }
+lv2_raw = { version = "0.3.0", path = "../lv2_raw" }
 
 [[example]]
 name = "eg_amp_rust"
