@@ -24,6 +24,7 @@ keywords = ["lv2"]
 license = "ISC"
 
 [dependencies]
+lazy_static = "1.0"
 libc = "0.2"
 lv2_raw = "0.2.0"
 

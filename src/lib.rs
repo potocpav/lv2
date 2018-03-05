@@ -10,9 +10,4 @@ pub use core::*;
 pub use myutils::*;
 pub use ui::*;
 
-pub use lv2_raw::core::*;
-pub use lv2_raw::atom::*;
-pub use lv2_raw::ui::*;
-pub use lv2_raw::midi::*;
-pub use lv2_raw::urid::*;
-pub use lv2_raw::atomutils::*;
+pub use lv2_raw::core::{LV2Handle,LV2Descriptor,LV2Feature};

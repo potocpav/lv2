@@ -18,7 +18,9 @@
 // 2015/07/11: It is currently not possible to allocate a struct that contains a C string. See
 // comment in fn lv2_descriptor().
 
+
 extern crate libc;
+#[macro_use]
 extern crate lv2;
 use std::ptr;
 
@@ -37,7 +39,7 @@ pub struct AmpNew<'a> {
 
 // I'd say NO, because:
 
-// I want to implement "lv2::LV2Plugin"
+// I want to implement "lv2::Plugin"
 // without having to use "unsafe", i.e. to "provide a safe interface" to the
 // lv2 library. What is the correct (let's say idiomatic) way to "provide a safe
 // interface"?
@@ -63,7 +65,7 @@ pub struct AmpNew<'a> {
 // to "slice::from_raw_parts_mut()" without having to worry about perfomance/space,
 // since no resources are actually allocated anyways, right?
 
-impl<'a> lv2::LV2Plugin<'a> for AmpNew<'a> {
+impl<'a> lv2::Plugin<'a> for AmpNew<'a> {
     // For now, initialize() is a placeholder function that doesn't do anything. More complicated plugins may scan host features, set a sample rate, etc.
     fn initialize(&mut self) {}
     fn connect_port(&mut self, port: u32, data: &'a mut [f32]) {
@@ -92,55 +94,4 @@ impl<'a> lv2::LV2Plugin<'a> for AmpNew<'a> {
     fn cleanup(&mut self) {}
 }
 
-type Newtype<'a> = AmpNew<'a>;
-
-// If I understand correctly, the lv2::LV2Descriptor struct that is delivered
-// to the host by "lv2_descriptor()" CANNOT be generic over "Newtype", since this
-// would require "lv2_descriptor()" to be generic. But functions called from C
-// (by their name) CANNOT be generic.
-// The reason why "lv2::instantiate::<>" etc. CAN be generic, is that those functions
-// get passed to C via FUNCTION POINTERS contained in a #[repr(C)] struct.
-// A secondary question is: Is this necessary? How to implement this more
-// effectively?
-
-static S: &'static [u8] = b"http://example.org/eg-amp-rust\0";
-static mut DESC: lv2::LV2Descriptor = lv2::LV2Descriptor {
-    uri: 0 as *const libc::c_char, // ptr::null() isn't const fn (yet)
-    instantiate: lv2::instantiate::<Newtype>,
-    connect_port: lv2::connect_port::<Newtype>,
-    activate: Some(lv2::activate),
-    run: lv2::run::<Newtype>,
-    deactivate: Some(lv2::deactivate),
-    cleanup: lv2::cleanup,
-    extension_data: lv2::extension_data,
-};
-
-
-#[no_mangle]
-pub extern "C" fn lv2_descriptor(index: i32) -> *const lv2::LV2Descriptor {
-    if index != 0 {
-        return ptr::null();
-    } else {
-        // credits to ker on stackoverflow: http://stackoverflow.com/questions/31334356/static-struct-with-c-strings-for-lv2-plugin (duplicate) or http://stackoverflow.com/questions/25880043/creating-a-static-c-struct-containing-strings
-        let ptr = S.as_ptr() as *const libc::c_char;
-        unsafe {
-            DESC.uri = ptr;
-            return &DESC as *const lv2::LV2Descriptor;
-        }
-    }
-}
-
-// fn instantiate<T>() -> lv2_raw::LV2Handle {
-//     let ptr: lv2_raw::LV2Handle;
-//     unsafe {
-//         ptr = libc::malloc(mem::size_of::<T>() as libc::size_t) as lv2_raw::LV2Handle;
-//         let plgptr = ptr as *mut T;
-//     }
-//     ptr
-// }
-
-// impl<'a> AmpNew<'a> {
-//     fn new_ptr() -> lv2_raw::LV2Handle {
-//         instantiate::<AmpNew>()
-//     }
-// }
+plugin!(AmpNew, b"http://example.org/eg-amp-rust\0");
