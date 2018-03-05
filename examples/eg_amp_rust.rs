@@ -28,10 +28,10 @@ use std::ptr;
 // buffers, and a reference to a single number (gain) by which the input buffer
 // is multiplied. Memory managemet of these resources is done by the host.
 
-pub struct AmpNew<'a> {
-    gain: &'a f32,
+pub struct AmpNew {
+/*    gain: &'a f32,
     input: &'a [f32],
-    output: &'a mut [f32],
+    output: &'a mut [f32],*/
 }
 
 // The main question is: Should one use raw pointers instead of references in this
@@ -65,28 +65,27 @@ pub struct AmpNew<'a> {
 // to "slice::from_raw_parts_mut()" without having to worry about perfomance/space,
 // since no resources are actually allocated anyways, right?
 
-impl<'a> lv2::Plugin<'a> for AmpNew<'a> {
+// ports
+const GAIN: usize = 0;
+const INPUT: usize = 0;
+const OUTPUT: usize = 0;
+
+impl lv2::Plugin for AmpNew {
     // For now, initialize() is a placeholder function that doesn't do anything. More complicated plugins may scan host features, set a sample rate, etc.
-    fn initialize(&mut self) {}
-    fn connect_port(&mut self, port: u32, data: &'a mut [f32]) {
-        match port {
-            0 => self.gain = &data[0] as &f32, // data may be NULL pointer, so don't dereference!
-            1 => self.input = data as &'a [f32],
-            2 => self.output = data,
-            _ => panic!("Not a valid PortIndex: {}", port),
-        }
+    fn initialize() -> Self {
+        AmpNew { }
     }
     fn activate(&mut self) {}
-    fn run(&mut self, n_samples: u32) {
-
-        let coef: f32;
-        match *self.gain > -90.0 {
-            true => coef = (10.0 as f32).powf(self.gain * 0.05),
-            false => coef = 0.0,
-        }
-        for x in 0..n_samples {
+    fn run(&mut self, buffers: &mut [&mut [f32]]) {
+        let gain = buffers[GAIN][0];
+        let coef = if gain > -90.0 {
+                (10.0 as f32).powf(gain * 0.05)
+            } else {
+                0.0
+            };
+        for x in 0..buffers[OUTPUT].len() {
             let i = x as usize;
-            self.output[i] = self.input[i] * coef;
+            buffers[OUTPUT][i] = buffers[INPUT][i] * coef;
         }
 
     }
