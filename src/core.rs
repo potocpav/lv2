@@ -1,10 +1,7 @@
 extern crate lv2_raw;
 
-/// A group of plugin methods that are defined by the plugin and called
-/// by the host.
+/// A group of plugin methods that are defined by the plugin and called by the host.
 pub trait Plugin {
-    /// Does everything `instantiate()` does in the C code, except allocating
-    /// memory.
     fn initialize() -> Self;
     // fn connect_port(&mut self, _port: u32, _data: &'a mut [f32]) {}
     fn activate(&mut self) {}
@@ -13,10 +10,7 @@ pub trait Plugin {
     fn cleanup(&mut self) {}
 }
 
-/// Exports the necessary symbols for the plugin to be used by a VST host.
-///
-/// This macro takes a type which must implement the traits `plugin::Plugin` and
-/// `std::default::Default`.
+/// This macro takes a type which must implement the trait `Plugin`
 #[macro_export]
 macro_rules! plugin {
     ($t:ty, $url:expr) => {

@@ -3,16 +3,15 @@
 // Read the README.txt of the original code:
 // http://lv2plug.in/git/cgit.cgi/lv2.git/tree/plugins/eg-amp.lv2/README.txt
 
-
 #[macro_use]
 extern crate lv2;
 
-pub struct AmpNew;
-
-// ports
+// port numbers
 const GAIN: usize = 0;
 const INPUT: usize = 1;
 const OUTPUT: usize = 2;
+
+pub struct AmpNew;
 
 impl lv2::Plugin for AmpNew {
     fn initialize() -> Self {
