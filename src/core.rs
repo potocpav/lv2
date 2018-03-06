@@ -62,10 +62,10 @@ impl<P> PluginExtras<P> {
 
 #[doc(hidden)]
 pub extern "C" fn instantiate<T: Plugin>(_descriptor: *const lv2_raw::LV2Descriptor,
-                                                    _rate: f64,
-                                                    _bundle_path: *const i8,
-                                                    _features: *const *const lv2_raw::LV2Feature)
-                                                    -> lv2_raw::LV2Handle {
+                                         _rate: f64,
+                                         _bundle_path: *const i8,
+                                         _features: *const *const lv2_raw::LV2Feature)
+                                         -> lv2_raw::LV2Handle {
 
     let mut t = Box::new(PluginExtras::new(T::initialize()));
     let ptr = &mut *t as *mut _ as *mut c_void;
@@ -75,8 +75,8 @@ pub extern "C" fn instantiate<T: Plugin>(_descriptor: *const lv2_raw::LV2Descrip
 
 #[doc(hidden)]
 pub extern "C" fn connect_port<P: Plugin>(handle: lv2_raw::LV2Handle,
-                                                     port: u32,
-                                                     data: *mut c_void) {
+                                          port: u32,
+                                          data: *mut c_void) {
     assert!((port as usize) < MAX_N_PORTS);
     let d = data as *mut f32;
     let plgptr = handle as *mut PluginExtras<P>;
