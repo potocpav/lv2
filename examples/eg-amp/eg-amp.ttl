@@ -4,13 +4,13 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix units: <http://lv2plug.in/ns/extensions/units#> .
 
-<http://example.org/eg-amp-rust>
+<http://example.org/eg-amp>
 	a lv2:Plugin ,
 		lv2:AmplifierPlugin ;
 
 	lv2:project <http://example.org> ;
 
-	doap:name "Tentative eg-amp in Rust" ;
+	doap:name "A Simple Amplifier in Rust" ;
 	doap:license <http://opensource.org/licenses/isc> ;
 	lv2:optionalFeature lv2:hardRTCapable ;
 	lv2:port [

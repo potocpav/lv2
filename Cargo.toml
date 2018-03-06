@@ -24,9 +24,9 @@ keywords = ["lv2"]
 license = "ISC"
 
 [dependencies]
-lazy_static = "1.0"
 lv2_raw = { version = "0.3.0", path = "../lv2_raw" }
 
 [[example]]
-name = "eg_amp_rust"
+name = "eg_amp"
+path = "examples/eg-amp/eg_amp.rs"
 crate-type = ["cdylib"]
