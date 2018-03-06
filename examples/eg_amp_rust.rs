@@ -21,14 +21,14 @@ impl lv2::Plugin for AmpNew {
     fn activate(&mut self) {}
 
     fn run(&mut self, buffers: &mut [&mut [f32]]) {
-        let gain = buffers[GAIN][0];
-        let coef = if gain > -90.0 {
-                (10.0 as f32).powf(gain * 0.05)
-            } else {
-                0.0
-            };
-        for x in 0..buffers[OUTPUT].len() {
-            let i = x as usize;
+
+        for i in 0..buffers[OUTPUT].len() {
+            let gain = buffers[GAIN][i];
+            let coef = if gain > -90.0 {
+                    (10.0 as f32).powf(gain * 0.05)
+                } else {
+                    0.0
+                };
             buffers[OUTPUT][i] = buffers[INPUT][i] * coef;
         }
     }
