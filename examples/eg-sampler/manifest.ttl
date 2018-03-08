@@ -1,0 +1,14 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ui:   <http://lv2plug.in/ns/extensions/ui#> .
+@prefix all: <http://open-music-kontrollers.ch/lv2/alluis#> .
+
+<http://example.org/eg-sampler-rs>
+        a lv2:Plugin ;
+        lv2:binary <libsampler.so> ;
+        rdfs:seeAlso <sampler.ttl> .
+
+<http://example.org/eg-sampler-rs#ui>
+        a all:UI ;
+        ui:binary <libsampler_ui.so> ;
+        rdfs:seeAlso <sampler.ttl> .

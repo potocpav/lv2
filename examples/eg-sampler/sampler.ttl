@@ -1,0 +1,90 @@
+
+@prefix atom:  <http://lv2plug.in/ns/ext/atom#> .
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix lv2:   <http://lv2plug.in/ns/lv2core#> .
+@prefix patch: <http://lv2plug.in/ns/ext/patch#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix state: <http://lv2plug.in/ns/ext/state#> .
+@prefix ui:    <http://lv2plug.in/ns/extensions/ui#> .
+@prefix urid:  <http://lv2plug.in/ns/ext/urid#> .
+@prefix work:  <http://lv2plug.in/ns/ext/worker#> .
+@prefix param: <http://lv2plug.in/ns/ext/parameters#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix units: <http://lv2plug.in/ns/extensions/units#> .
+@prefix all: <http://open-music-kontrollers.ch/lv2/alluis#> .
+
+<http://example.org/eg-sampler-rs#sample>
+        a lv2:Parameter ;
+        rdfs:label "sample" ;
+        rdfs:range atom:Path .
+
+<http://example.org/eg-sampler-rs>
+        a lv2:Plugin ;
+        doap:name "Example Sampler in Rust" ;
+        doap:license <http://opensource.org/licenses/isc> ;
+        lv2:project <http://lv2plug.in/ns/lv2> ;
+        lv2:requiredFeature urid:map ,
+                work:schedule ;
+        lv2:optionalFeature lv2:hardRTCapable ,
+                state:loadDefaultState ;
+        lv2:extensionData state:interface ,
+                work:interface ;
+        ui:ui <http://example.org/eg-sampler-rs#ui> ;
+        patch:writable <http://example.org/eg-sampler-rs#sample> ;
+
+        lv2:port [
+
+    		a lv2:InputPort ,
+    			lv2:ControlPort ;
+    		lv2:index 0 ;
+    		lv2:symbol "gain" ;
+    		lv2:name "Gain" ;
+
+    		lv2:default 0.0 ;
+    		lv2:minimum -90.0 ;
+    		lv2:maximum 24.0 ;
+
+    		units:unit units:db ;
+    		lv2:scalePoint [
+    			rdfs:label "+5" ;
+    			rdf:value 5.0
+    		] , [
+    			rdfs:label "0" ;
+    			rdf:value 0.0
+    		] , [
+    			rdfs:label "-5" ;
+    			rdf:value -5.0
+    		] , [
+    			rdfs:label "-10" ;
+    			rdf:value -10.0
+    		]
+    	] , [
+    		a lv2:AudioPort ,
+    			lv2:InputPort ;
+    		lv2:index 1 ;
+    		lv2:symbol "in" ;
+    		lv2:name "In"
+    	] , [
+    		a lv2:AudioPort ,
+    			lv2:OutputPort ;
+    		lv2:index 2 ;
+    		lv2:symbol "out" ;
+    		lv2:name "Out"
+    	] ;
+        state:state [
+                <http://example.org/eg-sampler-rs#sample> <click.wav>
+        ] .
+
+<http://example.org/eg-sampler-rs#ui>
+	a all:UI ;
+	lv2:requiredFeature ui:idleInterface ;
+	lv2:extensionData ui:idleInterface, ui:showInterface .
+
+        # a ui:GtkUI ;
+        # lv2:requiredFeature urid:map ;
+        # lv2:extensionData ui:showInterface ;
+        # ui:portNotification [
+        #         ui:plugin <http://example.org/eg-sampler-rs> ;
+        #         lv2:symbol "notify" ;
+        #         ui:notifyType atom:Blank
+        # ] .

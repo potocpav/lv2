@@ -25,8 +25,19 @@ license = "ISC"
 
 [dependencies]
 lv2_raw = { version = "0.3.0", path = "../lv2_raw" }
+libc = "0.2"
 
 [[example]]
 name = "eg_amp"
 path = "examples/eg-amp/eg_amp.rs"
+crate-type = ["cdylib"]
+
+[[example]]
+name = "sampler"
+path = "examples/eg-sampler/sampler.rs"
+crate-type = ["cdylib"]
+
+[[example]]
+name = "sampler_ui"
+path = "examples/eg-sampler/sampler_ui.rs"
 crate-type = ["cdylib"]

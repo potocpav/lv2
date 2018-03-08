@@ -66,7 +66,6 @@ pub extern "C" fn instantiate<T: Plugin>(_descriptor: *const lv2_raw::LV2Descrip
                                          _bundle_path: *const i8,
                                          _features: *const *const lv2_raw::LV2Feature)
                                          -> lv2_raw::LV2Handle {
-
     let mut t = Box::new(PluginExtras::new(T::initialize()));
     let ptr = &mut *t as *mut _ as *mut c_void;
     ::std::mem::forget(t);
