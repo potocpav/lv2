@@ -2,7 +2,6 @@
 use std::os::raw::{c_char, c_int, c_uint, c_void};
 use lv2_raw::ui::{LV2UIDescriptor, LV2UIHandle, LV2UIControllerRaw, LV2UIWidget, LV2UIWriteFunctionRaw};
 use lv2_raw::core::{LV2Feature};
-use libc;
 
 
 /// A group of plugin methods that are defined by the plugin and called by the host.
@@ -45,10 +44,12 @@ macro_rules! plugin_ui {
         }
 
         // TODO: move to the lv2_raw library, maybe gen automatically from `ui.h`?
+        #[allow(non_upper_case_globals)]
         const LV2_UI__idleInterface: &[u8] = b"http://lv2plug.in/ns/extensions/ui#idleInterface\0";
+        #[allow(non_upper_case_globals)]
         const LV2_UI__showInterface: &[u8] = b"http://lv2plug.in/ns/extensions/ui#showInterface\0";
 
-        use std::os::raw::{c_void, c_char, c_int};
+        use std::os::raw::{c_void, c_char};
 
         static mut IDLE_INTERFACE: lv2::LV2UIIdleInterface = lv2::LV2UIIdleInterface {
             idle: lv2::ui::idle::<$t>,
@@ -74,14 +75,15 @@ macro_rules! plugin_ui {
 }
 
 #[doc(hidden)]
-pub extern "C" fn instantiate<P: PluginUI>(descriptor: *const LV2UIDescriptor,
-                               plugin_uri: *const c_char,
-                               bundle_path: *const c_char,
-                               write_function: LV2UIWriteFunctionRaw,
-                               controller: LV2UIControllerRaw,
-                               widget: *mut LV2UIWidget,
-                               features: *const (*const LV2Feature))
-                               -> LV2UIHandle {
+pub extern "C" fn instantiate<P: PluginUI>(
+    _descriptor: *const LV2UIDescriptor,
+    _plugin_uri: *const c_char,
+    _bundle_path: *const c_char,
+    _write_function: LV2UIWriteFunctionRaw,
+    _controller: LV2UIControllerRaw,
+    _widget: *mut LV2UIWidget,
+    _features: *const (*const LV2Feature))
+-> LV2UIHandle {
     let mut t = Box::new(P::instantiate());
     let ptr = &mut *t as *mut _ as *mut c_void;
     ::std::mem::forget(t);
@@ -95,11 +97,13 @@ pub extern "C" fn cleanup<P: PluginUI>(handle: LV2UIHandle) {
 }
 
 #[doc(hidden)]
-pub extern "C" fn port_event<P: PluginUI>(ui: LV2UIHandle,
-                                          port_index: c_uint,
-                                          buffer_size: c_uint,
-                                          format: c_uint,
-                                          buffer: *const c_void) {
+pub extern "C" fn port_event<P: PluginUI>(
+    _ui: LV2UIHandle,
+    _port_index: c_uint,
+    _buffer_size: c_uint,
+    _format: c_uint,
+    _buffer: *const c_void)
+{
     unimplemented!()
 }
 
