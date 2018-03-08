@@ -14,7 +14,7 @@ pub struct ConrodWindow {
 impl ConrodWindow {
     pub fn new() -> ConrodWindow {
         const WIDTH: u32 = 400;
-        const HEIGHT: u32 = 720;
+        const HEIGHT: u32 = 300;
 
         // Build the window.
         let events_loop = glium::glutin::EventsLoop::new();
