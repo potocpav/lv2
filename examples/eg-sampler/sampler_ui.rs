@@ -37,6 +37,9 @@ impl lv2::PluginUI for SamplerUI {
 
     fn run(&mut self) -> bool {
         for event in self.window.events() {
+            if let glium::glutin::Event::WindowEvent { glium::glutin::WindowEvent::Closed, .. } = event {
+                return false;
+            }
             match event {
                 glium::glutin::Event::WindowEvent { event, .. } => match event {
                     glium::glutin::WindowEvent::Closed => {
