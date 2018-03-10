@@ -1,5 +1,6 @@
 
 use std::os::raw::{c_char, c_uint, c_void};
+use std::ptr::{null, null_mut};
 use lv2_raw::ui::{LV2UIDescriptor, LV2UIHandle, LV2UIControllerRaw, LV2UIWidget, LV2UIWriteFunctionRaw, LV2UIExternalUIWidget, LV2UIExternalUIHost};
 use lv2_raw::core::{LV2Feature};
 use libc::strcmp;
@@ -7,19 +8,19 @@ use libc::strcmp;
 
 /// A group of plugin methods that are defined by the plugin and called by the host.
 pub trait PluginUI {
-    fn instantiate() -> Self;
+    fn instantiate(human_id: &str) -> Self;
     fn cleanup(&mut self) {}
     fn port_event() {}
 
-    fn run(&mut self);
+    fn run(&mut self) -> bool;
     fn show(&mut self);
     fn hide(&mut self);
 }
 
-#[repr(C)]
 pub struct PluginUIExt<P> {
     widget: LV2UIExternalUIWidget,
     host: *const LV2UIExternalUIHost,
+    controller: LV2UIControllerRaw,
     plugin: P,
 }
 
@@ -60,32 +61,39 @@ pub extern "C" fn instantiate<P: PluginUI>(
     _plugin_uri: *const c_char,
     _bundle_path: *const c_char,
     _write_function: LV2UIWriteFunctionRaw,
-    _controller: LV2UIControllerRaw,
+    controller: LV2UIControllerRaw,
     widget: *mut LV2UIWidget,
     features: *const (*const LV2Feature))
 -> LV2UIHandle {
     let mut p_feature = features;
-    let mut host: *const c_void = ::std::ptr::null();
+    let mut host: *const LV2UIExternalUIHost = null();
     unsafe {
-        while *p_feature != ::std::ptr::null() {
+        while *p_feature != null() {
             if strcmp((**p_feature).uri, LV2_EXTERNAL_UI__Host as *const _ as *const i8) == 0 {
-                host = (**p_feature).data;
+                host = (**p_feature).data as *const LV2UIExternalUIHost;
             }
             p_feature = p_feature.offset(1);
         }
     }
-    if host == ::std::ptr::null() {
-        return ::std::ptr::null_mut();
+    if host == null() {
+        return null_mut();
     }
 
+    let human_id =
+        if let Ok(h_id) = unsafe { ::std::ffi::CStr::from_ptr((*host).plugin_human_id).to_str() } {
+            h_id
+        } else {
+            return null_mut();
+        };
     let plugin_ext = PluginUIExt {
         widget: LV2UIExternalUIWidget {
             run: Some(run::<P>),
             show: Some(show::<P>),
             hide: Some(hide::<P>),
         },
-        host: host as *const LV2UIExternalUIHost,
-        plugin: P::instantiate(),
+        host,
+        controller,
+        plugin: P::instantiate(human_id),
     };
 
     let mut t = Box::new(plugin_ext);
@@ -125,7 +133,11 @@ macro_rules! offset_of {
 
 pub extern "C" fn run<P: PluginUI>(ui: *const LV2UIExternalUIWidget) {
     unsafe {
-        (*(ui.offset(-offset_of!(PluginUIExt<P>, widget)) as *mut PluginUIExt<P>)).plugin.run();
+        let plugin_ext = &mut *(ui.offset(-offset_of!(PluginUIExt<P>, widget)) as *mut PluginUIExt<P>);
+        // let (on_close_ptr, controller) = ((*plugin_ext.host).ui_closed, plugin_ext.controller);
+        if !plugin_ext.plugin.run() {
+            ((*plugin_ext.host).ui_closed)(plugin_ext.controller);
+        }
     }
 }
 

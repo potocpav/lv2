@@ -5,6 +5,8 @@ extern crate lv2;
 extern crate conrod;
 
 mod conrod_window;
+
+use conrod::backend::glium::glium;
 use conrod_window::ConrodWindow;
 
 
@@ -15,8 +17,8 @@ pub struct SamplerUI {
 }
 
 impl lv2::PluginUI for SamplerUI {
-    fn instantiate() -> Self {
-        eprintln!("instantiate");
+    fn instantiate(human_id: &str) -> Self {
+        eprintln!("instantiate {:?}", human_id);
         let mut window = ConrodWindow::new();
         SamplerUI {
             ids: Ids::new(window.ui.widget_id_generator()),
@@ -33,15 +35,23 @@ impl lv2::PluginUI for SamplerUI {
         eprintln!("hide");
     }
 
-    fn run(&mut self) {
+    fn run(&mut self) -> bool {
         for event in self.window.events() {
             match event {
+                glium::glutin::Event::WindowEvent { event, .. } => match event {
+                    glium::glutin::WindowEvent::Closed => {
+                        eprintln!("closing...");
+                        return false;
+                    },
+                    _ => (),
+                },
                 _ => (),
             }
         }
 
         set_ui(&mut self.gain, self.window.ui.set_widgets(), &self.ids);
         self.window.render();
+        true
     }
 }
 
