@@ -16,6 +16,7 @@ pub struct SamplerUI {
 
 impl lv2::PluginUI for SamplerUI {
     fn instantiate() -> Self {
+        eprintln!("instantiate");
         let mut window = ConrodWindow::new();
         SamplerUI {
             ids: Ids::new(window.ui.widget_id_generator()),
@@ -32,7 +33,7 @@ impl lv2::PluginUI for SamplerUI {
         eprintln!("hide");
     }
 
-    fn idle(&mut self) {
+    fn run(&mut self) {
         for event in self.window.events() {
             match event {
                 _ => (),

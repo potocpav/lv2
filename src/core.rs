@@ -45,15 +45,15 @@ macro_rules! plugin {
 const MAX_N_PORTS: usize = 32;
 
 #[doc(hidden)]
-pub struct PluginExtras<P> {
+pub struct PluginExt<P> {
     port_bufs: [*mut f32; MAX_N_PORTS],
     plugin: P,
 }
 
 #[doc(hidden)]
-impl<P> PluginExtras<P> {
+impl<P> PluginExt<P> {
     pub fn new(p: P) -> Self {
-        PluginExtras {
+        PluginExt {
             port_bufs: [0 as *mut _; MAX_N_PORTS],
             plugin: p,
         }
@@ -61,24 +61,27 @@ impl<P> PluginExtras<P> {
 }
 
 #[doc(hidden)]
-pub extern "C" fn instantiate<T: Plugin>(_descriptor: *const lv2_raw::LV2Descriptor,
-                                         _rate: f64,
-                                         _bundle_path: *const i8,
-                                         _features: *const *const lv2_raw::LV2Feature)
-                                         -> lv2_raw::LV2Handle {
-    let mut t = Box::new(PluginExtras::new(T::initialize()));
+pub extern "C" fn instantiate<T: Plugin>(
+    _descriptor: *const lv2_raw::LV2Descriptor,
+    _rate: f64,
+    _bundle_path: *const i8,
+    _features: *const *const lv2_raw::LV2Feature)
+-> lv2_raw::LV2Handle {
+    let mut t = Box::new(PluginExt::new(T::initialize()));
     let ptr = &mut *t as *mut _ as *mut c_void;
     ::std::mem::forget(t);
     return ptr;
 }
 
 #[doc(hidden)]
-pub extern "C" fn connect_port<P: Plugin>(handle: lv2_raw::LV2Handle,
-                                          port: u32,
-                                          data: *mut c_void) {
+pub extern "C" fn connect_port<P: Plugin>(
+    handle: lv2_raw::LV2Handle,
+    port: u32,
+    data: *mut c_void)
+{
     assert!((port as usize) < MAX_N_PORTS);
     let d = data as *mut f32;
-    let plgptr = handle as *mut PluginExtras<P>;
+    let plgptr = handle as *mut PluginExt<P>;
     unsafe {
         (*plgptr).port_bufs[port as usize] = d;
     }
@@ -87,13 +90,13 @@ pub extern "C" fn connect_port<P: Plugin>(handle: lv2_raw::LV2Handle,
 #[doc(hidden)]
 pub extern "C" fn activate<P: Plugin>(instance: lv2_raw::LV2Handle) {
     unsafe {
-        (*(instance as *mut PluginExtras<P>)).plugin.activate();
+        (*(instance as *mut PluginExt<P>)).plugin.activate();
     }
 }
 
 #[doc(hidden)]
 pub extern "C" fn run<P: Plugin>(instance: lv2_raw::LV2Handle, n_samples: u32) {
-    let plgptr = instance as *mut PluginExtras<P>;
+    let plgptr = instance as *mut PluginExt<P>;
     unsafe {
         let mut buffers: [&mut [f32]; MAX_N_PORTS] = Default::default();
         for i in 0..MAX_N_PORTS {
@@ -111,13 +114,13 @@ pub extern "C" fn run<P: Plugin>(instance: lv2_raw::LV2Handle, n_samples: u32) {
 #[doc(hidden)]
 pub extern "C" fn deactivate<P: Plugin>(instance: lv2_raw::LV2Handle) {
     unsafe {
-        (*(instance as *mut PluginExtras<P>)).plugin.deactivate();
+        (*(instance as *mut PluginExt<P>)).plugin.deactivate();
     }
 }
 
 #[doc(hidden)]
 pub extern "C" fn cleanup<P: Plugin>(instance: lv2_raw::LV2Handle) {
-    let mut plugin: Box<PluginExtras<P>> = unsafe { ::std::mem::transmute(instance) };
+    let mut plugin: Box<PluginExt<P>> = unsafe { ::std::mem::transmute(instance) };
     plugin.plugin.cleanup();
 }
 

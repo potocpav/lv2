@@ -11,7 +11,8 @@
 @prefix param: <http://lv2plug.in/ns/ext/parameters#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix units: <http://lv2plug.in/ns/extensions/units#> .
-@prefix all: <http://open-music-kontrollers.ch/lv2/alluis#> .
+@prefix all:   <http://open-music-kontrollers.ch/lv2/alluis#> .
+@prefix kx:    <http://kxstudio.sf.net/ns/lv2ext/external-ui#> .
 
 <http://example.org/eg-sampler-rs#sample>
         a lv2:Parameter ;
@@ -76,9 +77,10 @@
         ] .
 
 <http://example.org/eg-sampler-rs#ui>
-	a all:UI ;
-	lv2:requiredFeature ui:idleInterface ;
-	lv2:extensionData ui:idleInterface, ui:showInterface .
+	a kx:Widget ;
+	lv2:requiredFeature kx:Host .
+	# lv2:requiredFeature ui:idleInterface ;
+	# lv2:extensionData ui:idleInterface, ui:showInterface .
 
         # a ui:GtkUI ;
         # lv2:requiredFeature urid:map ;

@@ -1,7 +1,8 @@
 
-use std::os::raw::{c_char, c_int, c_uint, c_void};
-use lv2_raw::ui::{LV2UIDescriptor, LV2UIHandle, LV2UIControllerRaw, LV2UIWidget, LV2UIWriteFunctionRaw};
+use std::os::raw::{c_char, c_uint, c_void};
+use lv2_raw::ui::{LV2UIDescriptor, LV2UIHandle, LV2UIControllerRaw, LV2UIWidget, LV2UIWriteFunctionRaw, LV2UIExternalUIWidget, LV2UIExternalUIHost};
 use lv2_raw::core::{LV2Feature};
+use libc::strcmp;
 
 
 /// A group of plugin methods that are defined by the plugin and called by the host.
@@ -10,12 +11,16 @@ pub trait PluginUI {
     fn cleanup(&mut self) {}
     fn port_event() {}
 
-    // showInterface extension
+    fn run(&mut self);
     fn show(&mut self);
     fn hide(&mut self);
+}
 
-    // idleInterface extension
-    fn idle(&mut self);
+#[repr(C)]
+pub struct PluginUIExt<P> {
+    widget: LV2UIExternalUIWidget,
+    host: *const LV2UIExternalUIHost,
+    plugin: P,
 }
 
 /// This macro takes a type which must implement the trait `PluginUI`
@@ -27,11 +32,12 @@ macro_rules! plugin_ui {
             instantiate: lv2::ui::instantiate::<$t>,
             cleanup: lv2::ui::cleanup::<$t>,
             port_event: lv2::ui::port_event::<$t>,
-            extension_data: Some(extension_data::<$t>),
+            extension_data: None,
         };
 
         #[no_mangle]
         pub extern "C" fn lv2ui_descriptor(index: i32) -> *const lv2::LV2UIDescriptor {
+            eprintln!("ui_descriptor");
             if index != 0 {
                 return std::ptr::null();
             } else {
@@ -42,37 +48,11 @@ macro_rules! plugin_ui {
                 }
             }
         }
-
-        // TODO: move to the lv2_raw library, maybe gen automatically from `ui.h`?
-        #[allow(non_upper_case_globals)]
-        const LV2_UI__idleInterface: &[u8] = b"http://lv2plug.in/ns/extensions/ui#idleInterface\0";
-        #[allow(non_upper_case_globals)]
-        const LV2_UI__showInterface: &[u8] = b"http://lv2plug.in/ns/extensions/ui#showInterface\0";
-
-        use std::os::raw::{c_void, c_char};
-
-        static mut IDLE_INTERFACE: lv2::LV2UIIdleInterface = lv2::LV2UIIdleInterface {
-            idle: lv2::ui::idle::<$t>,
-        };
-
-        static mut SHOW_INTERFACE: lv2::LV2UIShowInterface = lv2::LV2UIShowInterface {
-            show: lv2::ui::show::<$t>,
-            hide: lv2::ui::hide::<$t>,
-        };
-
-        extern "C" fn extension_data<T: lv2::PluginUI>(uri: *const c_char) -> (*const c_void) {
-            unsafe {
-                if lv2::strcmp(uri, LV2_UI__idleInterface as *const _ as *const i8) == 0 {
-                    return &IDLE_INTERFACE as *const _ as *const c_void;
-                } else if lv2::strcmp(uri, LV2_UI__showInterface as *const _ as *const i8) == 0 {
-                    return &SHOW_INTERFACE as *const _ as *const c_void;
-                } else {
-                    ::std::ptr::null()
-                }
-            }
-        }
     }
 }
+
+#[allow(non_upper_case_globals)]
+const LV2_EXTERNAL_UI__Host: &[u8] = b"http://kxstudio.sf.net/ns/lv2ext/external-ui#Host\0";
 
 #[doc(hidden)]
 pub extern "C" fn instantiate<P: PluginUI>(
@@ -81,19 +61,49 @@ pub extern "C" fn instantiate<P: PluginUI>(
     _bundle_path: *const c_char,
     _write_function: LV2UIWriteFunctionRaw,
     _controller: LV2UIControllerRaw,
-    _widget: *mut LV2UIWidget,
-    _features: *const (*const LV2Feature))
+    widget: *mut LV2UIWidget,
+    features: *const (*const LV2Feature))
 -> LV2UIHandle {
-    let mut t = Box::new(P::instantiate());
+    let mut p_feature = features;
+    let mut host: *const c_void = ::std::ptr::null();
+    unsafe {
+        while *p_feature != ::std::ptr::null() {
+            if strcmp((**p_feature).uri, LV2_EXTERNAL_UI__Host as *const _ as *const i8) == 0 {
+                host = (**p_feature).data;
+            }
+            p_feature = p_feature.offset(1);
+        }
+    }
+    if host == ::std::ptr::null() {
+        return ::std::ptr::null_mut();
+    }
+
+    let plugin_ext = PluginUIExt {
+        widget: LV2UIExternalUIWidget {
+            run: Some(run::<P>),
+            show: Some(show::<P>),
+            hide: Some(hide::<P>),
+        },
+        host: host as *const LV2UIExternalUIHost,
+        plugin: P::instantiate(),
+    };
+
+    let mut t = Box::new(plugin_ext);
     let ptr = &mut *t as *mut _ as *mut c_void;
+
+    unsafe {
+        let w = widget as *mut *const LV2UIExternalUIWidget;
+        *w = (&t.widget) as *const _ as *const LV2UIExternalUIWidget;
+    }
+
     ::std::mem::forget(t);
     return ptr;
 }
 
 #[doc(hidden)]
 pub extern "C" fn cleanup<P: PluginUI>(handle: LV2UIHandle) {
-    let mut plugin: Box<P> = unsafe { ::std::mem::transmute(handle) };
-    plugin.cleanup();
+    let mut plugin: Box<PluginUIExt<P>> = unsafe { ::std::mem::transmute(handle) };
+    plugin.plugin.cleanup();
 }
 
 #[doc(hidden)]
@@ -104,26 +114,29 @@ pub extern "C" fn port_event<P: PluginUI>(
     _format: c_uint,
     _buffer: *const c_void)
 {
-    unimplemented!()
+    eprintln!("port event");
 }
 
-pub extern "C" fn idle<P: PluginUI>(ui: LV2UIHandle) -> c_int {
-    unsafe {
-        (*(ui as *mut P)).idle();
+macro_rules! offset_of {
+    ($ty:ty, $field:ident) => {
+        &(*(0 as *const $ty)).$field as *const _ as isize
     }
-    0
 }
 
-pub extern "C" fn show<P: PluginUI>(ui: LV2UIHandle) -> c_int {
+pub extern "C" fn run<P: PluginUI>(ui: *const LV2UIExternalUIWidget) {
     unsafe {
-        (*(ui as *mut P)).show();
+        (*(ui.offset(-offset_of!(PluginUIExt<P>, widget)) as *mut PluginUIExt<P>)).plugin.run();
     }
-    0
 }
 
-pub extern "C" fn hide<P: PluginUI>(ui: LV2UIHandle) -> c_int {
+pub extern "C" fn show<P: PluginUI>(ui: *const LV2UIExternalUIWidget) {
     unsafe {
-        (*(ui as *mut P)).hide();
+        (*(ui.offset(-offset_of!(PluginUIExt<P>, widget)) as *mut PluginUIExt<P>)).plugin.show();
     }
-    0
+}
+
+pub extern "C" fn hide<P: PluginUI>(ui: *const LV2UIExternalUIWidget) {
+    unsafe {
+        (*(ui.offset(-offset_of!(PluginUIExt<P>, widget)) as *mut PluginUIExt<P>)).plugin.hide();
+    }
 }
