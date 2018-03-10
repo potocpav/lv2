@@ -10,16 +10,22 @@ pub struct ConrodWindow {
     pub renderer: conrod::backend::glium::Renderer,
     pub image_map: conrod::image::Map<glium::texture::Texture2d>,
 }
+/*
+impl Drop for ConrodWindow {
+    fn drop(&mut self) {
+        println!("Dropping!");
+    }
+}*/
 
 impl ConrodWindow {
-    pub fn new() -> ConrodWindow {
+    pub fn new(title: &str) -> ConrodWindow {
         const WIDTH: u32 = 400;
         const HEIGHT: u32 = 300;
 
         // Build the window.
         let events_loop = glium::glutin::EventsLoop::new();
         let window = glium::glutin::WindowBuilder::new()
-            .with_title("Primitive Widgets Demo")
+            .with_title(title)
             .with_dimensions(WIDTH, HEIGHT);
         let context = glium::glutin::ContextBuilder::new()
             .with_vsync(true)
@@ -43,18 +49,6 @@ impl ConrodWindow {
             image_map,
             renderer,
         }
-    }
-
-    pub fn events(&mut self) -> Vec<glium::glutin::Event> {
-        let mut events = Vec::new();
-        self.events_loop.poll_events(|event| events.push(event));
-        for event in &events {
-            // Use the `winit` backend feature to convert the winit event to a conrod one.
-            if let Some(event) = conrod::backend::winit::convert_event(event.clone(), &self.display) {
-                self.ui.handle_event(event);
-            }
-        }
-        return events;
     }
 
     pub fn render(&mut self) {

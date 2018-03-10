@@ -12,7 +12,7 @@ pub trait PluginUI {
     fn cleanup(&mut self) {}
     fn port_event() {}
 
-    fn run(&mut self) -> bool;
+    fn run<F: Fn(u32, f32)>(&mut self, send_float: F) -> bool;
     fn show(&mut self);
     fn hide(&mut self);
 }
@@ -21,6 +21,7 @@ pub struct PluginUIExt<P> {
     widget: LV2UIExternalUIWidget,
     host: *const LV2UIExternalUIHost,
     controller: LV2UIControllerRaw,
+    write_function: LV2UIWriteFunctionRaw, // TODO: make this Option<...> field a raw fn pointer
     plugin: P,
 }
 
@@ -60,7 +61,7 @@ pub extern "C" fn instantiate<P: PluginUI>(
     _descriptor: *const LV2UIDescriptor,
     _plugin_uri: *const c_char,
     _bundle_path: *const c_char,
-    _write_function: LV2UIWriteFunctionRaw,
+    write_function: LV2UIWriteFunctionRaw,
     controller: LV2UIControllerRaw,
     widget: *mut LV2UIWidget,
     features: *const (*const LV2Feature))
@@ -85,6 +86,9 @@ pub extern "C" fn instantiate<P: PluginUI>(
         } else {
             return null_mut();
         };
+    if let None = write_function {
+        return null_mut();
+    }
     let plugin_ext = PluginUIExt {
         widget: LV2UIExternalUIWidget {
             run: Some(run::<P>),
@@ -93,6 +97,7 @@ pub extern "C" fn instantiate<P: PluginUI>(
         },
         host,
         controller,
+        write_function,
         plugin: P::instantiate(human_id),
     };
 
@@ -134,8 +139,12 @@ macro_rules! offset_of {
 pub extern "C" fn run<P: PluginUI>(ui: *const LV2UIExternalUIWidget) {
     unsafe {
         let plugin_ext = &mut *(ui.offset(-offset_of!(PluginUIExt<P>, widget)) as *mut PluginUIExt<P>);
-        // let (on_close_ptr, controller) = ((*plugin_ext.host).ui_closed, plugin_ext.controller);
-        if !plugin_ext.plugin.run() {
+        // NOTE: the `instantiate` function should check that this `unwrap` is safe
+        let writefn_ptr = plugin_ext.write_function.unwrap();
+        let controller = plugin_ext.controller;
+        let writefn = |port, value| (writefn_ptr)(controller, port, 4, 0, &*Box::new(value) as *const _ as *const c_void);
+
+        if !plugin_ext.plugin.run(writefn) {
             ((*plugin_ext.host).ui_closed)(plugin_ext.controller);
         }
     }

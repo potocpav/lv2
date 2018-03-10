@@ -19,11 +19,11 @@ pub struct SamplerUI {
 impl lv2::PluginUI for SamplerUI {
     fn instantiate(human_id: &str) -> Self {
         eprintln!("instantiate {:?}", human_id);
-        let mut window = ConrodWindow::new();
+        let mut window = ConrodWindow::new(human_id);
         SamplerUI {
             ids: Ids::new(window.ui.widget_id_generator()),
             window,
-            gain: 50.0,
+            gain: 0.0,
         }
     }
 
@@ -35,26 +35,33 @@ impl lv2::PluginUI for SamplerUI {
         eprintln!("hide");
     }
 
-    fn run(&mut self) -> bool {
-        for event in self.window.events() {
-            if let glium::glutin::Event::WindowEvent { glium::glutin::WindowEvent::Closed, .. } = event {
-                return false;
+    fn run<F: Fn(u32, f32)>(&mut self, send_float: F) -> bool {
+        let mut open = true;
+        {
+        let ref mut ui = self.window.ui;
+        let ref display = self.window.display;
+        self.window.events_loop.poll_events(|event| {
+            // Use the `winit` backend feature to convert the winit event to a conrod one.
+            if let Some(event) = conrod::backend::winit::convert_event(event.clone(), display) {
+                ui.handle_event(event);
             }
-            match event {
-                glium::glutin::Event::WindowEvent { event, .. } => match event {
-                    glium::glutin::WindowEvent::Closed => {
-                        eprintln!("closing...");
-                        return false;
-                    },
-                    _ => (),
-                },
-                _ => (),
+            if let glium::glutin::Event::WindowEvent { event: glium::glutin::WindowEvent::Closed, .. } = event {
+                eprintln!("closing...");
+                open = false;
             }
-        }
+        });
+    }
 
         set_ui(&mut self.gain, self.window.ui.set_widgets(), &self.ids);
+
+        send_float(0, self.gain);
+
         self.window.render();
-        true
+        open
+    }
+
+    fn cleanup(&mut self) {
+        eprintln!("Cleanup");
     }
 }
 
@@ -77,7 +84,7 @@ fn set_ui(gain: &mut f32, ref mut ui: conrod::UiCell, ids: &Ids) {
     // The background canvas upon which we'll place our widgets.
     Canvas::new().pad(80.0).set(ids.canvas, ui);
 
-    for event in Slider::new(*gain, 0.0, 100.0)
+    for event in Slider::new(*gain, -90.0, 24.0)
             .padded_w_of(ids.canvas, 80.0)
             .h(20.0)
             .top_left_of(ids.canvas)

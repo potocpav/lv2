@@ -1,10 +1,10 @@
 
 AMP_NAME=eg-amp.lv2
-AMP_TARGET=target/release/examples/libeg_amp.so
+AMP_TARGET=target/debug/examples/libeg_amp.so
 
 SAMPLER_NAME=eg-sampler.lv2
-SAMPLER_UI_TARGET=target/release/examples/libsampler_ui.so
-SAMPLER_TARGET=target/release/examples/libsampler.so
+SAMPLER_UI_TARGET=target/debug/examples/libsampler_ui.so
+SAMPLER_TARGET=target/debug/examples/libsampler.so
 PREFIX=/usr/local
 
 .PHONY: all clean install
@@ -26,7 +26,7 @@ $(AMP_NAME)/libeg_amp.so: $(AMP_TARGET)
 	cp $(AMP_TARGET) $(AMP_NAME)/
 
 $(AMP_TARGET): examples/eg-amp/eg_amp.rs
-	cargo build --release --example eg_amp
+	cargo build --debug --example eg_amp
 
 $(AMP_NAME)/eg_amp.ttl: examples/eg-amp/eg_amp.ttl
 	cp examples/eg-amp/eg_amp.ttl $(AMP_NAME)/eg_amp.ttl
@@ -43,9 +43,9 @@ $(SAMPLER_NAME)/libsampler_ui.so: $(SAMPLER_UI_TARGET)
 	cp $(SAMPLER_UI_TARGET) $(SAMPLER_NAME)/
 
 $(SAMPLER_TARGET): examples/eg-sampler/sampler.rs
-	cargo build --release --example sampler
+	cargo build --debug --example sampler
 $(SAMPLER_UI_TARGET): examples/eg-sampler/sampler_ui.rs
-	cargo build --release --example sampler_ui
+	cargo build --debug --example sampler_ui
 
 $(SAMPLER_NAME)/sampler.ttl: examples/eg-sampler/sampler.ttl
 	cp examples/eg-sampler/sampler.ttl $(SAMPLER_NAME)/sampler.ttl

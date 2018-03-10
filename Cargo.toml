@@ -26,7 +26,7 @@ license = "ISC"
 [dependencies]
 lv2_raw = { version = "0.3.0", path = "../lv2_raw" }
 libc = "0.2"
-conrod = { version = "0.57", features = ["glium", "winit"] }
+conrod = { version = "0.58", features = ["glium", "winit"], path = "../conrod" }
 
 [[example]]
 name = "eg_amp"
