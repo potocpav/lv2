@@ -38,19 +38,19 @@ impl lv2::PluginUI for SamplerUI {
     fn run<F: Fn(u32, f32)>(&mut self, send_float: F) -> bool {
         let mut open = true;
         {
-        let ref mut ui = self.window.ui;
-        let ref display = self.window.display;
-        self.window.events_loop.poll_events(|event| {
-            // Use the `winit` backend feature to convert the winit event to a conrod one.
-            if let Some(event) = conrod::backend::winit::convert_event(event.clone(), display) {
-                ui.handle_event(event);
-            }
-            if let glium::glutin::Event::WindowEvent { event: glium::glutin::WindowEvent::Closed, .. } = event {
-                eprintln!("closing...");
-                open = false;
-            }
-        });
-    }
+            let ref mut ui = self.window.ui;
+            let ref display = self.window.display;
+            self.window.events_loop.poll_events(|event| {
+                // Use the `winit` backend feature to convert the winit event to a conrod one.
+                if let Some(event) = conrod::backend::winit::convert_event(event.clone(), display) {
+                    ui.handle_event(event);
+                }
+                if let glium::glutin::Event::WindowEvent { event: glium::glutin::WindowEvent::Closed, .. } = event {
+                    eprintln!("closing...");
+                    open = false;
+                }
+            });
+        }
 
         set_ui(&mut self.gain, self.window.ui.set_widgets(), &self.ids);
 

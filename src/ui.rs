@@ -9,6 +9,7 @@ use libc::strcmp;
 /// A group of plugin methods that are defined by the plugin and called by the host.
 pub trait PluginUI {
     fn instantiate(human_id: &str) -> Self;
+    // TODO: replace by a Drop impl?
     fn cleanup(&mut self) {}
     fn port_event() {}
 
@@ -139,7 +140,7 @@ macro_rules! offset_of {
 pub extern "C" fn run<P: PluginUI>(ui: *const LV2UIExternalUIWidget) {
     unsafe {
         let plugin_ext = &mut *(ui.offset(-offset_of!(PluginUIExt<P>, widget)) as *mut PluginUIExt<P>);
-        // NOTE: the `instantiate` function should check that this `unwrap` is safe
+        // NOTE: the `instantiate` function checks that this `unwrap` is safe
         let writefn_ptr = plugin_ext.write_function.unwrap();
         let controller = plugin_ext.controller;
         let writefn = |port, value| (writefn_ptr)(controller, port, 4, 0, &*Box::new(value) as *const _ as *const c_void);
