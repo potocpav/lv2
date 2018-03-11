@@ -1,0 +1,13 @@
+[package]
+name = "sampler-ui"
+version = "0.3.0"
+authors = ["pavelpotocek <pavelpotocek@gmail.com>"]
+description = "A Simple Sampler LV2 Plugin in Rust"
+
+[lib]
+path = "sampler_ui.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+lv2 = { version = "0.3.0", path = "../../.." }
+conrod = { version = "0.58", features = ["glium", "winit"], path = "../../../../conrod" }

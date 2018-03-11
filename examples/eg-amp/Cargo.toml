@@ -1,0 +1,12 @@
+[package]
+name = "eg_amp"
+version = "0.3.0"
+authors = ["pavelpotocek <pavelpotocek@gmail.com>"]
+description = "A Simple Amplifier LV2 Plugin in Rust"
+
+[lib]
+path = "eg_amp.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+lv2 = { version = "0.3.0", path = "../.." }

@@ -19,7 +19,7 @@ impl Drop for ConrodWindow {
 
 impl ConrodWindow {
     pub fn new(title: &str) -> ConrodWindow {
-        const WIDTH: u32 = 400;
+        const WIDTH: u32 = 600;
         const HEIGHT: u32 = 300;
 
         // Build the window.

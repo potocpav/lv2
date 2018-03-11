@@ -1,0 +1,12 @@
+[package]
+name = "sampler"
+version = "0.3.0"
+authors = ["pavelpotocek <pavelpotocek@gmail.com>"]
+description = "A Simple Sampler LV2 Plugin in Rust"
+
+[lib]
+path = "sampler.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+lv2 = { version = "0.3.0", path = "../../.." }

@@ -1,8 +1,15 @@
 
 The `*.ttl` files listed here are used to generate rust parsers in the `ontology`
-directory using the `rome` crate.
+directory using the `rome` crate:
 
-TODO: write about the genration process
+```rust
+cargo run --example generate_code -- --mod ontology ../lv2/src/ontology ../lv2/ontology/*.ttl
+```
+
+This fork was used: `https://github.com/potocpav/rome`. Some details about
+the local changes to the `ttl` files are in `ontology/README.md`.
+
+## Tweaks
 
 Some file parts were deleted or commented out becaus `rome` can't parse them.
 
