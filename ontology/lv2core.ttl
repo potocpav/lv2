@@ -127,6 +127,7 @@ lv2:PluginBase
 	a rdfs:Class ,
 		owl:Class ;
 	rdfs:label "Plugin Base" ;
+	rdfs:subClassOf rdfs:Class ;
 	lv2:documentation """
 <p>An abstract plugin-like resource that MAY not actually be an LV2 plugin
 (e.g. may not actually have a plugin binary).</p>

@@ -1,0 +1,16 @@
+[package]
+name = "rust-amp"
+version = "0.3.0"
+authors = ["pavelpotocek <pavelpotocek@gmail.com>"]
+description = "A Simple Amplifier LV2 Plugin in Rust"
+build = "build.rs"
+
+[lib]
+path = "rust-amp.rs"
+crate-type = ["cdylib"]
+
+[build-dependencies]
+lv2 = { version = "0.3.0", path = "../.." }
+
+[dependencies]
+lv2 = { version = "0.3.0", path = "../.." }

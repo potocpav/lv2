@@ -1,10 +1,10 @@
 
+// WIP
+
 use rome;
 use rome::graphs::tel;
 use rome::graph::{BlankNodeOrIRI, GraphWriter, Graph, Triple, IRIPtr, Resource, LiteralPtr};
 use rome::io::TurtleParser;
-
-use ontology;
 
 use std::fs;
 use std::io;
@@ -60,20 +60,28 @@ fn print_triples<'a, G: Graph<'a>>(graph: &'a G) {
     }
 }
 
+use ontology;
+use rome::resource::ResourceBase;
+use ontology::properties::rdfs::SeeAlso;
+use ontology::properties::rdf::Value;
+
 #[test]
 fn test() {
     let graph = load_file("examples/eg-sampler/manifest.ttl").unwrap();
     print_triples(&graph);
-
+/*
     let plugin_iri = get_subject_by_type(&graph, "http://lv2plug.in/ns/lv2core#Plugin").unwrap();
     let plugin_ui_iri = get_subject_by_type(&graph, "http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget").unwrap();
     println!("PLUGIN: {:?}, UI: {:?}", plugin_iri.as_str(), plugin_ui_iri.as_str());
     println!("seeAlso: {:?}", get_see_also(&graph, plugin_iri).unwrap().as_str());
-
+*/
     let adapter = ontology::adapter(&graph);
-
+    for plugin in ontology::classes::lv2::Plugin::iter(&adapter) {
+        println!("{:?}", plugin.see_also().next().unwrap().value().next().unwrap());
+    }
+/*
     let graph = load_file("examples/eg-sampler/sampler.ttl").unwrap();
     print_triples(&graph);
-
+*/
     panic!()
 }

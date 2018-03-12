@@ -25,5 +25,6 @@ license = "ISC"
 
 [dependencies]
 libc = "0.2"
-rome = { version = "0.1", path = "../rome" }
+# rome = { version = "0.1", path = "../rome" }
 lv2_raw = { version = "0.3.0", path = "../lv2_raw" }
+Inflector = "*"

@@ -12,6 +12,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for AllpassPlugin<'g, G> where 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for AllpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, AllpassPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:AmplifierPlugin**
@@ -21,6 +53,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for AmplifierPlugin<'g, G> wher
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for AmplifierPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, AmplifierPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:AnalyserPlugin**
@@ -31,6 +95,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for AnalyserPlugin<'g, G> where
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for AnalyserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, AnalyserPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:AudioPort**
@@ -47,6 +143,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for BandpassPlugin<'g, G> where
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for BandpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, BandpassPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:CVPort**
@@ -100,6 +228,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for ChorusPlugin<'g, G> where G
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for ChorusPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, ChorusPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:CombPlugin**
@@ -109,6 +269,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for CombPlugin<'g, G> where G: 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for CombPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, CombPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:CompressorPlugin**
@@ -118,6 +310,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for CompressorPlugin<'g, G> whe
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for CompressorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, CompressorPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:ConstantPlugin**
@@ -127,6 +351,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for ConstantPlugin<'g, G> where
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for ConstantPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, ConstantPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:ControlPort**
@@ -144,6 +400,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for ConverterPlugin<'g, G> wher
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for ConverterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, ConverterPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:DelayPlugin**
@@ -154,6 +442,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for DelayPlugin<'g, G> where G:
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for DelayPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, DelayPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:Designation**
@@ -200,6 +520,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for DistortionPlugin<'g, G> whe
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for DistortionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, DistortionPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:DynamicsPlugin**
@@ -210,6 +562,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for DynamicsPlugin<'g, G> where
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for DynamicsPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, DynamicsPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:EQPlugin**
@@ -219,6 +603,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for EQPlugin<'g, G> where G: gr
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for EQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, EQPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:EnvelopePlugin**
@@ -228,6 +644,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for EnvelopePlugin<'g, G> where
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for EnvelopePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, EnvelopePlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:ExpanderPlugin**
@@ -237,6 +685,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for ExpanderPlugin<'g, G> where
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for ExpanderPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, ExpanderPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:ExtensionData**
@@ -257,6 +737,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for FilterPlugin<'g, G> where G
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for FilterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, FilterPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:FlangerPlugin**
@@ -266,6 +778,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for FlangerPlugin<'g, G> where 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for FlangerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, FlangerPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:FunctionPlugin**
@@ -275,6 +819,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for FunctionPlugin<'g, G> where
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for FunctionPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, FunctionPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:GatePlugin**
@@ -284,6 +860,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for GatePlugin<'g, G> where G: 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for GatePlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, GatePlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:GeneratorPlugin**
@@ -294,6 +902,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for GeneratorPlugin<'g, G> wher
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for GeneratorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, GeneratorPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:HighpassPlugin**
@@ -303,6 +943,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for HighpassPlugin<'g, G> where
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for HighpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, HighpassPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:InputPort**
@@ -321,6 +993,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for InstrumentPlugin<'g, G> whe
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for InstrumentPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, InstrumentPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:LimiterPlugin**
@@ -330,6 +1034,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for LimiterPlugin<'g, G> where 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for LimiterPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, LimiterPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:LowpassPlugin**
@@ -339,6 +1075,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for LowpassPlugin<'g, G> where 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for LowpassPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, LowpassPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:MIDIPlugin**
@@ -348,6 +1116,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for MIDIPlugin<'g, G> where G: 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for MIDIPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, MIDIPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:MixerPlugin**
@@ -358,6 +1158,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for MixerPlugin<'g, G> where G:
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for MixerPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, MixerPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:ModulatorPlugin**
@@ -367,6 +1199,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for ModulatorPlugin<'g, G> wher
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for ModulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, ModulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:MultiEQPlugin**
@@ -376,6 +1240,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for MultiEQPlugin<'g, G> where 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for MultiEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, MultiEQPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:OscillatorPlugin**
@@ -385,6 +1281,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for OscillatorPlugin<'g, G> whe
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for OscillatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, OscillatorPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:OutputPort**
@@ -402,6 +1330,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for ParaEQPlugin<'g, G> where G
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for ParaEQPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, ParaEQPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:Parameter**
@@ -448,6 +1408,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for PhaserPlugin<'g, G> where G
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for PhaserPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, PhaserPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:PitchPlugin**
@@ -457,6 +1449,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for PitchPlugin<'g, G> where G:
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for PitchPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, PitchPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:Plugin**
@@ -466,6 +1490,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for Plugin<'g, G> where G: grap
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for Plugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, Plugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:PluginBase**
@@ -473,6 +1529,38 @@ class!(
 56);
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for PluginBase<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, PluginBase<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:Point**
@@ -500,6 +1588,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for ReverbPlugin<'g, G> where G
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for ReverbPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, ReverbPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:ScalePoint**
@@ -516,6 +1636,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for SimulatorPlugin<'g, G> wher
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for SimulatorPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, SimulatorPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:SpatialPlugin**
@@ -526,6 +1678,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for SpatialPlugin<'g, G> where 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for SpatialPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, SpatialPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:Specification**
@@ -575,6 +1759,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for SpectralPlugin<'g, G> where
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for SpectralPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, SpectralPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:Symbol**
@@ -629,6 +1845,38 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for UtilityPlugin<'g, G> where 
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for UtilityPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, UtilityPlugin<'g, G>> where G: graph::Graph<'g> {}
 
 class!(
 /// **lv2:WaveshaperPlugin**
@@ -638,3 +1886,35 @@ impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for WaveshaperPlugin<'g, G> whe
 impl<'g, G: 'g> ontology::properties::ui::Ui<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
 impl<'g, G: 'g> ontology::properties::lv2::Port<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SubClassOf<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::EquivalentClass<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::IntersectionOf<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::OneOf<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::UnionOf<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Type<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdf::Value<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Comment<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::IsDefinedBy<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Label<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::Member<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::rdfs::SeeAlso<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedProperty<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedSource<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::AnnotatedTarget<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for WaveshaperPlugin<'g, G> where G: graph::Graph<'g> {}
+impl<'g, G: 'g> ontology::properties::owl::Members<'g> for resource::IRI<'g, WaveshaperPlugin<'g, G>> where G: graph::Graph<'g> {}
