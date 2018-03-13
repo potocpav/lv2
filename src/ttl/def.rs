@@ -59,7 +59,7 @@ pub struct PluginUI {
 impl fmt::Display for Category {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", match self {
-            AmplifierPlugin => "AmplifierPlugin",
+            &Category::AmplifierPlugin => "AmplifierPlugin",
         })
     }
 }
@@ -67,8 +67,8 @@ impl fmt::Display for Category {
 impl fmt::Display for Direction {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", match self {
-            Input => "InputPort",
-            Output => "OutputPort",
+            &Direction::Input => "InputPort",
+            &Direction::Output => "OutputPort",
         })
     }
 }
@@ -77,8 +77,8 @@ impl fmt::Display for Direction {
 impl fmt::Display for PortType {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{}", match self {
-            ControlPort => "ControlPort",
-            AudioPort => "AudioPort",
+            &PortType::AudioPort => "AudioPort",
+            &PortType::ControlPort(_) => "ControlPort",
         })
     }
 }

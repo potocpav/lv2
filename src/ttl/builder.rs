@@ -12,7 +12,7 @@ impl PluginBuilder {
         PluginBuilder { p: Plugin {
             id: id.to_string(),
             name: id.to_string(),
-            uri: "http://example.com/".to_string() + id,
+            uri: "http://example.org/".to_string() + id,
             category: None,
             ports: Vec::new(),
             ui: None,
@@ -54,6 +54,21 @@ impl PluginBuilder {
         let port = Port {
             direction: Direction::Output,
             ty: PortType::AudioPort,
+            symbol: name.to_snake_case(),
+            name: name.to_title_case(),
+        };
+        self.p.ports.push(port);
+        self
+    }
+
+    pub fn control_port(&mut self, name: &str, default: f32, minimum: f32, maximum: f32) -> &mut Self {
+        let spec = ControlPortSpec {
+            default, minimum, maximum,
+            scale_points: Vec::new(),
+        };
+        let port = Port {
+            direction: Direction::Input,
+            ty: PortType::ControlPort(spec),
             symbol: name.to_snake_case(),
             name: name.to_title_case(),
         };

@@ -32,4 +32,4 @@ impl lv2::Plugin for AmpNew {
     }
 }
 
-plugin!(AmpNew, b"http://example.org/eg-amp\0");
+plugin!(AmpNew, b"http://example.org/rust-amp\0");

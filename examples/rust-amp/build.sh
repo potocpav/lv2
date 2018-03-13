@@ -1,8 +1,7 @@
 #!/usr/bin/bash
 
+touch build.rs
 cargo build
-mkdir -p eg-amp.lv2
-cp target/debug/*.so eg-amp.lv2 -v
-cp *.ttl eg-amp.lv2 -v
+cp target/debug/librust_amp.so rust-amp.lv2/ -v
 
-sudo cp -rv eg-amp.lv2 /usr/local/lib/lv2/
+sudo cp -rv rust-amp.lv2 /usr/local/lib/lv2/

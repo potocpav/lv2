@@ -7,6 +7,7 @@ fn main() {
     let plugin = PluginBuilder::new("rust-amp")
         .name("A Simple Rust Amplifier")
         .category(Category::AmplifierPlugin)
+        .control_port("Gain", 0.0, -90.0, 24.0)
         .input_port("In")
         .output_port("Out")
         .finish().unwrap();
